@@ -1,0 +1,749 @@
+/*
+Theme Name: CILAD 2018
+Description: São Paulo, a maior cidade brasileira e uma das principais cidades do mundo,  jamais recebeu uma edição do Congresso Iberolatinoamericano de Dermatologia. Unimo-nos em prol desse objetivo, formando desde já uma comissão qualificada para viabilizar um grandioso evento.
+Version: 1.0
+Author: Visana Comunicação
+Author URI: http://www.visanacomunicacao.com.br
+*/
+ 
+@charset "utf-8";
+@import './assets/css/util/_fonts';
+@import './assets/css/util/_colors';
+@import './assets/css/util/_mixins'; 
+@import './assets/css/util/_components';
+@import './assets/css/util/_animations';
+@import './node_modules/sass-mediaqueries/_media-queries';
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,500,700');
+@import url('http://weloveiconfonts.com/api/?family=brandico');
+
+$footer:268px;
+
+body{font-family: 'Roboto', sans-serif;}
+
+a{
+    color:inherit !important;
+    text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6,ol,ul,p{
+    margin-bottom:0;
+    margin-top:0;
+}
+
+#wrap{
+    *{
+        position: relative;
+        z-index: 2;
+    }
+    &.pattern {
+        background-color:#E5E5E5;
+        &::after{
+            bottom:170px;
+            content:url(./assets/css/img/pattern.jpg);
+            display: block;
+            left:50%;
+            margin-left:-850.5px;
+            position: absolute;
+            z-index: 1;
+        }
+    }
+    min-height: 100vh;
+    overflow: hidden;
+    padding-bottom:$footer;
+    @include ipad($orientation:false){
+        min-height: initial;
+    }
+    @include iphone5($orientation:false){
+        min-height: initial;
+    }
+    @include iphone6-plus($orientation:false){
+        min-height: initial;
+    }
+    position: relative;
+}
+footer{
+    &::after{
+        border-style: solid;
+        border-width: 0 0 200px 2500px;
+        border-color: transparent transparent $roxo transparent;
+        content: "";
+        height: 0; 
+        left:50%;
+        margin-left:-1250px;
+        position: absolute;
+        top:100%;
+        @include transition(.2s);
+        width: 0; 
+        z-index: 2;
+    }
+    &::before{
+        border-style: solid;
+        border-width: 200px 0 0 1300px;
+        border-color: transparent transparent transparent $laranja;
+        content: "";
+        height: 0;
+        left:0;
+        position: absolute;
+        top:100%;
+        @include transition(1000ms);
+        width: 0;
+        z-index: 1;
+    }
+    &.animate{
+        &::after,&::before{top:0;}
+    }
+    [class*="col"]{
+        @include ipad($orientation:false){
+            &:not(:first-child){padding-top:30px;}
+            text-align: center;
+        }
+        @include iphone5($orientation:false){
+            &:not(:first-child){padding-top:30px;}
+            text-align: center;
+        } 
+        @include iphone6-plus($orientation:false){
+            &:not(:first-child){padding-top:30px;}
+            text-align: center;
+        }
+        overflow: hidden;
+    }
+    .container{
+        padding:30px 0;
+    }
+    .copyright{
+        &::before{
+            content:"Realização";
+            color:#fff;
+            display: block;
+            font-size:em(19);
+            text-transform: center;
+            padding-bottom:12px;
+        }
+        img{
+            display: inline-block;
+            max-width: 100%;
+            margin:0 auto;
+        }
+        text-align: center;
+    }
+    .fluid-container{
+        background-color:$cinza;
+        display: block;
+        height:$footer;
+        position: relative;    
+        z-index: 5;    
+    }
+    h3{
+        color:#fff;
+        display: block;
+        margin:0 0 6px;
+    }
+    margin:-$footer auto 0;
+    @include ipad($orientation:false){
+        .fluid-container{height:auto;}
+    }
+    @include iphone5($orientation:false){
+        .fluid-container{height:auto;}
+    }
+    @include iphone6-plus($orientation:false){
+        .fluid-container{height:auto;}
+    }
+    color:#fff;
+    overflow: hidden;
+    padding-top:130px;
+    position: relative;
+    width:100%;
+    z-index: 3; 
+}
+
+h1{
+    font-size:em(70);
+}
+
+h2{
+    font-size:em(19);
+    font-weight: bold;
+    line-height: 1.3em;
+    text-transform: uppercase;
+}
+
+h3{
+    font-size:em(22);
+    line-height: 1.3em;
+}
+
+p{
+    i{
+        display: inline-block;
+        padding-right:6px;
+        vertical-align: middle;
+    }
+    line-height: 1.3em;
+}
+
+.container{max-width: 1100px;}
+
+[class*="btn"]{
+    @include border(5px);
+    border-bottom:4px rgba(0,0,0,.2) solid;
+    display: block;
+    line-height: 1.5;
+    max-height: 53px;
+    padding:16px 0 12px;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    &.btn-1{
+        background-color:$jeans;
+        color:#fff;
+    }
+}
+
+[class*="brandico-"]:before {
+    display: inline-block;
+    font-family: 'brandico', sans-serif;
+    padding-right:6px;
+    vertical-align: middle;
+}
+
+// 
+
+header{
+    .container{
+        @include iphone5($orientation:false){
+            max-width: 100%;
+            padding:0 0;
+            width:100%;
+        }
+        @include iphone6-plus($orientation:false){
+            max-width: 100%;
+            padding:0 0;
+            width:100%;
+        }
+        @include ipad($orientation:false){
+            max-width: 100%;
+            padding:0 0;
+            width:100%;
+        }
+    }    
+    background-color:#fff;
+    z-index: 50 !important;
+}
+
+#topo{ 
+    #lang li{
+        &:hover{background-color:lighten($jeans,10%);}
+        &:not(:last-child){margin-right:-4px;}
+        background-color:$jeans;
+        color:#fff !important;
+        display: inline-block;
+        font-size:em(14);
+        font-weight: bold;
+        line-height: 1.6em;
+        padding:13px;
+        text-align: center;
+        text-transform: uppercase;
+        vertical-align: middle;
+    }
+    p{
+        &+*{
+            display: inline-block;
+            vertical-align: middle;            
+        }
+        display: inline-block;
+        padding-right:20px;
+        @include iphone5($orientation:portrait){
+            padding-right:6px;
+        }
+        vertical-align: middle;        
+    }
+    background-color:$azul;
+    color:#fff;
+}
+
+#header{
+    .container{
+        @extend .flex;
+        @include flex-flow(row);
+        @include align-items(stretch);
+        @include iphone5($orientation:false){
+            @include align-items(center);
+            padding-right:15px;
+        }
+        @include iphone6-plus($orientation:false){
+            @include align-items(center);
+            padding-right:15px;
+        }
+        @include ipad($orientation:false){
+            padding-right:15px;
+        }
+    }
+    [class*="-8"]{
+        @extend .flex;
+        @include flex-flow(column);
+        @include align-items(inherit);
+        @include iphone5($orientation:false){
+            @include align-items(flex-end)
+        }
+        @include iphone6-plus($orientation:false){
+            @include align-items(flex-end)
+        }
+        @include ipad($orientation:false){
+            @include align-items(flex-end)
+        }
+        padding-right:0;
+    }
+    nav{
+        &:only-child{top:50%;}
+        > ul{
+            > li{
+                ul{
+                    &::before{
+                        border-style: solid;
+                        border-width: 0 10px 10px 10px;
+                        border-color: transparent transparent $azul transparent;                  
+                        content:"";
+                        display: block;
+                        height: 0; 
+                        left: 15%;
+                        position: absolute;
+                        top: -5px;
+                        width: 0;
+                    }
+                    li{
+                        &:hover{
+                            background-color:$jeans;
+                            border-bottom-color:rgba(0,0,0,0);
+                        }
+                        &:not(:last-child){
+                            border-bottom: rgba(0,0,0,.1) solid;
+                        }
+                        display: block;
+                        font-size:em(12);
+                        padding: 10px;
+                        text-align: left;
+                    }
+                    background-color:$azul;
+                    @include border(5px);
+                    color:#fff;
+                    display: none;
+                    left:0;
+                    padding:6px 0;
+                    position: absolute;
+                    top:100%;
+                    text-align: left;
+                    width:200%;
+                }
+                @include hdtv('720p'){
+                    &:hover ul{display: block;}
+                    &.menu-item-has-children:hover{border-bottom-color: rgba(0,0,0,0);}
+                }
+                border-bottom:3px rgba(255,255,255,0) solid;
+                color:$jeans;
+                display: inline-block;
+                @extend h2;
+                font-weight: 400;
+                padding:0 18px 3px;
+                vertical-align: middle;
+                &.ativo,
+                &:hover{
+                    border-bottom-color: $azul;
+                }
+            } 
+            text-align: right;
+        }        
+        flex:0 0 auto;
+    }
+    h2{
+        flex:1;
+        text-align: right;
+        @include iphone5($orientation:false){
+            font-size:em(14);
+            padding-bottom:20px;
+        }
+        @include iphone6-plus($orientation:false){
+            font-size:em(14);
+            padding-bottom:20px;
+        }
+    }
+    padding:30px 0;
+}
+
+#webdoor{
+    @include background(cover);
+    background-position: center center;
+    background-repeat:no-repeat;
+    background-attachment: fixed !important;
+    display: block;
+    height:0;
+    position: relative;
+    padding:0 0 35%;
+}
+
+#servicos{
+    .container{padding:0 0;}
+    i{
+        background-repeat:no-repeat;
+        background-position:center center;
+        background-size:auto;
+        display: block;
+        position: relative;
+        padding:0 0 70%;
+        margin-top:-70%;
+        @include iphone6-plus($orientation:false){
+            margin-top:30px;
+        }
+        @include iphone5($orientation:false){
+            margin-top:30px;
+        }
+    }
+    h3{
+        max-width: 85%;
+        margin:0 auto;
+        text-transform: uppercase;
+    }
+    ul{
+        li{
+            @include hdtv('720p'){
+                &:hover{
+                    @include scale(1.1); 
+                    @include transition(.2s);
+                }
+            }
+            i+div{
+                *{width: 100%;}
+                h3{
+                    flex:0 0 auto;
+                    @include ipad($orientation:false){
+                        flex:1;
+                    }   
+                }
+                p{
+                    &+a{
+                        flex:0 0 auto;
+                        font-size:em(19);
+                        text-transform: uppercase;
+                    } 
+                    flex:1 1 0;
+                    font-size:em(18);
+                    padding:20px 30px; 
+                    @include ipad($orientation:false){
+                        padding:20px 0;
+                    }             
+                }
+                @extend .flex;
+                @include flex-flow(column);
+                @include iphone5($orientation:false){display: block;}
+                @include iphone6-plus($orientation:false){display: block;}
+                background-color:#fff;
+                border-bottom-width: 3px;
+                border-bottom-style: solid;
+                height: 100%;
+                @include iphone5($orientation:false){height:auto;}
+                @include iphone6-plus($orientation:false){height:auto;}
+                padding:20px 15px;
+            }
+            text-align: center;
+        }  
+        @extend .flex;
+        @include flex-flow(row);
+        @include align-items(stretch);   
+        @include iphone5($orientation:false){display: block;}
+        @include iphone6-plus($orientation:false){display: block;}
+    }
+}
+
+#conheca-sao-paulo{
+    h3{
+        color:$jeans;
+        font-weight: bold;
+        zoom:1.4;
+    }
+    p{
+        a{
+            color:$jeans !important;
+        }
+        color:#fff;
+        line-height: 1.6em;
+        padding:20px 0;
+        @include ipad($orientation:landscape){font-size:.8em;}
+        @include ipad($orientation:portrait){font-size:.6em;}
+        @include ipad($orientation:false){text-align: justify;}
+    }
+    a{
+        @extend h3;
+        text-transform: uppercase;
+        zoom:initial;
+    }
+
+    .container {
+        [class*="col"]{
+            &:first-of-type{padding:0 0;}
+            &:last-of-type{
+                background-color:$azul;
+                padding:40px;
+            }
+            overflow: hidden;
+        }
+        @extend .flex;
+        @include flex-flow(row);
+        @include align-items(stretch); 
+        @include iphone5($orientation:false){display:block;}
+        @include iphone6-plus($orientation:false){display:block;}
+    }
+
+    margin:90px auto;
+
+    @include ipad($orientation:false){
+        margin:30px auto 0;
+    }
+    @include iphone5($orientation:false){
+        margin:30px auto 0;
+    } 
+    @include iphone6-plus($orientation:false){
+        margin:30px auto 0;
+    } 
+
+   .flexslider{
+       .slides{
+           >li{
+               img{
+                   display: block;
+                   min-height: 100%;
+                   min-width: 100%;
+                   max-height: 400px;
+                   width:auto; 
+               }
+               height:inherit;
+               overflow: hidden;
+           }
+           height:inherit;
+        }
+        .flex-direction-nav{
+        a{
+               &::before{
+                   color:inherit;
+                   font-family: 'Glyphicons Halflings';
+                   text-shadow:none;
+               }
+               &[class*="disabled"]{
+                   opacity: 0 !important;
+               }
+               &[class*="prev"]{
+                   &::before{
+                       content: "\e257";
+                   }
+                   @include iphone6-plus($orientation:false){
+                       left:-25px;
+                       @include shadow(8px,8px,0px,0px,$laranja);
+                   }
+                   @include iphone5($orientation:false){
+                       left:-25px;
+                       @include shadow(8px,8px,0px,0px,$laranja);
+                   }                      
+               }
+               &[class*="next"]{
+                   &::before{content: "\e258";}
+                   left:initial;
+                   right:15px;
+                   @include iphone6-plus($orientation:false){
+                       right:-25px;
+                       @include shadow(-8px,8px,0px,0px,$roxo);
+                   }
+                   @include iphone5($orientation:false){
+                       right:-25px;
+                       @include shadow(-8px,8px,0px,0px,$roxo);
+                   }  
+               }
+               display: block;
+               color:#fff;
+               font-size:em(48);
+               @include iphone6-plus($orientation:false){
+                   background-color:#fff;
+                   color:$jeans;
+                   font-size:em(24);
+               } 
+               @include iphone5($orientation:false){
+                   background-color:#fff;
+                   color:$jeans;
+                   font-size:em(24);
+               } 
+               height:48px;
+               line-height: 48px;
+               left:15px;
+               opacity: 1 !important;
+               position: absolute;
+               text-align: center;
+               width:48px;
+           }        
+           color:#fff;
+           position: absolute;
+           top:50%;
+           width:100%;
+           z-index: 10;
+           @include iphone6-plus($orientation:false){
+               color:$jeans;
+           }
+           @include iphone5($orientation:false){
+               color:$jeans;
+           }  
+       }
+       height:100%;
+       position: relative;
+   }
+}
+
+.pg-interna{
+    #webdoor{
+        &::after{
+            background-color:rgba(0,0,0,.7);
+            content:"";
+            display: block;
+            height: 100%;
+            left:0;
+            position: absolute;
+            top:0;
+            width:100%;
+        }
+        *{
+            position: relative;
+            z-index: 2;
+        }
+        color:#fff;
+        height:auto;
+        padding:150px 15px;
+        text-align: center;
+    }
+    #content{
+        padding:90px 0;
+        p{font-size:em(19);}
+    }
+    #wrap{
+        &::after{
+            bottom:0;
+            opacity: .2;
+        }
+    }
+}
+
+#mobileNav{ 
+    li{
+        ul{
+            margin: 15px -15px -16px;
+            border-top: 1px rgba(0,0,0,.2) solid;            
+        }
+        border-bottom:1px rgba(0,0,0,.2) solid;
+        background-color:$azul;
+        color:#fff;
+        display: block;
+        padding:15px;
+    }
+    max-height: 0; 
+    overflow: hidden;
+    @include height(.4s);
+    &.toggle{max-height: 600px;}
+}
+
+form{
+    span{margin-bottom:30px;}
+    label,button,input,span,textarea{
+        border:0;
+        display: block;
+    }
+    input,button,textarea{
+        background-color:#fff;
+        font-size:em(16);
+        overflow: hidden;
+        padding:12px;
+        resize:none;
+        width: 100%;
+    }
+    textarea{height:130px;}
+    .input-field label{
+        &:not(.label-icon).active {
+            font-size: 0.8rem;
+            -webkit-transform: translateY(-180%) translateX(-15px);
+            transform: translateY(-180%) translateX(-15px);
+        }
+        font-size: em(16);
+        left:30px;
+        position: absolute !important;
+        top: 1em;
+        z-index: 5 !important;
+    }
+}
+
+// 
+
+@media (min-width: 1280px) {
+    @for $i from 1 through 10 {
+        #servicos ul li:nth-child(#{$i}),
+        #header nav > ul > li:nth-child(#{$i}) {
+            -webkit-animation: bottom-opacity (30s*$i)/100 ease;
+            -moz-animation: bottom-opacity (30s*$i)/100 ease;
+            -ms-animation: bottom-opacity (30s*$i)/100 ease;
+            animation: bottom-opacity (30s*$i)/100 ease;
+        }
+    }
+    #webdoor{
+        -webkit-animation: opacity 500ms ease;
+        -moz-animation: opacity 500ms ease;
+        -ms-animation: opacity 500ms ease;
+        animation: opacity 500ms ease;
+    }
+    #topo{
+        -webkit-animation: top-opacity 500ms ease;
+        -moz-animation: top-opacity 500ms ease;
+        -ms-animation: top-opacity 500ms ease;
+        animation: top-opacity 500ms ease;
+    }
+    #header h2{
+        -webkit-animation: right-to-left 1000ms ease;
+        -moz-animation: right-to-left 1000ms ease;
+        -ms-animation: right-to-left 1000ms ease;
+        animation: right-to-left 1000ms ease;
+    }
+    #logo{
+        -webkit-animation: left-to-right 1000ms ease;
+        -moz-animation: left-to-right 1000ms ease;
+        -ms-animation: left-to-right 1000ms ease;
+        animation: left-to-right 1000ms ease;
+    }
+    .pg-interna #content,
+    .pg-interna #webdoor h1{
+        -webkit-animation: bottom-opacity 500ms ease;
+        -moz-animation: bottom-opacity 500ms ease;
+        -ms-animation: bottom-opacity 500ms ease;
+        animation: bottom-opacity 500ms ease;
+    }
+}
+
+@media (max-width: 1470px) {
+    #header nav ul li{font-size:em(16);}
+}
+
+@media (max-width: 1312px) {
+    #header nav ul li{
+        font-size:em(14);
+    }
+}
+
+@media (max-width: 1114px) {
+    #header nav ul li{
+        font-size:em(14);
+    }
+}
+
+@media (max-width: 767px) {
+    h1{
+        line-height: initial;
+        font-size:em(60);
+    }
+}
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+   body *{line-height: 1;}
+}  
+
+ 
